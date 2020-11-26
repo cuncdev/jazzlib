@@ -1,5 +1,11 @@
 [
-    {"name": "Barry Harris",
-     "birthDate": "12/15/1929"
-    }
+  {
+    "name": "Barry Harris",
+    "birthDate": "12/15/1929"
+  },
+  {
+    "name": "John Lewis",
+    "birthDate": "05/03/1920"
+  }
+
 ]
