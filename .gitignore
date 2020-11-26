@@ -1,0 +1,56 @@
+👽 A good gitignore for Next.js
+
+Nov 08, 2019
+
+There are a few common files that should be ignored for every Next.js project. We give a recommended configuration for working with git in Next.js projects
+What should you gitignore with Next.js
+
+While developing locally Next.js will generate a directory
+
+.next/
+
+which contains the files that get served to your browser. This set of files will also be generated at built time (with more optimizations). Since the
+
+next build
+
+step should occur in your continuous integration (CI) pipeline you don’t need to commit them to source control.
+
+As Next.js is based on Node.js you’ll also need to ignore the
+
+node_modules/
+
+directory. Some other common things to ignore are
+
+.env
+
+files, so you don’t leak secrets into source control.
+What should you not gitignore with Next.js
+
+You definitely do not want to ignore a few things in the project. Firstly do not ignore the lock file (eg
+
+yarn.lock
+
+or
+
+npm-lock.json
+
+). These are important for having consistently installed dependencies.
+
+If you are using Typescript with Next.js you also want to be sure not to ignore the
+
+tsconfig.json
+
+file that Next.js will automatically generate for you since that will be needed to reliably compile the Typescript application back down to Javascript.
+Sample gitignore
+
+# next.js build output
+.next
+# dotenv environment variables file (build for Zeit Now)
+.env
+.env.build
+# Dependency directories
+node_modules/
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
